@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Média Anual</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            height: 100vh;
+        }
+
+        .caixa {
+            background: white;
+            padding: 30px;
+            width: 300px;
+
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+
+            background: #2563eb;
+            color: white;
+
+            border: none;
+            border-radius: 5px;
+
+            cursor: pointer;
+        }
+
+        .media {
+            margin-top: 20px;
+            padding: 15px;
+
+            background: #eee;
+
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="caixa">
+
+        <h2>Média Anual</h2>
+
+        <input type="number" id="nota1" placeholder="1º Trimestre">
+
+        <input type="number" id="nota2" placeholder="2º Trimestre">
+
+        <input type="number" id="nota3" placeholder="3º Trimestre">
+
+        <button onclick="calcularMedia()">
+            Calcular
+        </button>
+
+        <div class="media">
+            Média Anual: <span id="resultado">0</span>
+        </div>
+
+    </div>
+
+    <script>
+
+        function calcularMedia() {
+
+            let nota1 = Number(document.getElementById("nota1").value);
+            let nota2 = Number(document.getElementById("nota2").value);
+            let nota3 = Number(document.getElementById("nota3").value);
+
+            let media = (nota1 + nota2 + nota3) / 3;
+
+            document.getElementById("resultado").innerHTML =
+                media.toFixed(1);
+        }
+
+    </script>
+
+</body>
+</html>
+```
